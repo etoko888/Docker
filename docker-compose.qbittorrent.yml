@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: cr.hotio.dev/hotio/qbittorrent
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 8090:8090
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Perth
+      - WEBUI_PORTS=8090/tcp
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /mnt/sdb/docker/qbittorrent/config:/config:rw
+      - /mnt/sdb/data/torrents:/data/torrents:rw

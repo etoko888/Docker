@@ -1,0 +1,19 @@
+version: "3.2"
+services:
+  bazarr:
+    container_name: bazarr
+    image: cr.hotio.dev/hotio/bazarr:latest
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 6767:6767
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Perth
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /mnt/sdb/docker/bazarr/config:/config:rw
+      - /mnt/sdb/data/media:/data/media:rw

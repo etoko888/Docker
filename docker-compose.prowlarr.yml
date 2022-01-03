@@ -1,0 +1,17 @@
+version: "3.2"
+services:
+  prowlarr:
+    container_name: prowlarr
+    image: cr.hotio.dev/hotio/prowlarr:testing
+    restart: unless-stopped
+    logging:
+      driver: json-file
+    network_mode: bridge
+    ports:
+      - 9696:9696
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Perth
+    volumes:
+      - /mnt/sdb/docker/prowlarr/config:/config 

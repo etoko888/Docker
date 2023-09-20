@@ -1,20 +1,21 @@
-version: "3.2"
+version: "3.7"
+
 services:
   sabnzbd:
     container_name: sabnzbd
-    image: cr.hotio.dev/hotio/sabnzbd:latest
+    image: ghcr.io/hotio/sabnzbd
     restart: unless-stopped
     logging:
       driver: json-file
     network_mode: bridge
     ports:
       - 8080:8080
-      - 9090:9090
+      - 8081:8081
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
+      - /mnt/d/docker/sabnzbd/config:/config:rw
+      - /mnt/d/data/usenet:/data/usenet:rw
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/sdb/docker/sabnzbd/config:/config:rw
-      - /mnt/sdb/data/usenet:/data/usenet:rw

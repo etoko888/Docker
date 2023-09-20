@@ -1,8 +1,9 @@
-version: "3.2"
+version: "3.7"
+
 services:
   sonarr:
     container_name: sonarr
-    image: cr.hotio.dev/hotio/sonarr:latest
+    image: ghcr.io/hotio/sonarr
     restart: unless-stopped
     logging:
       driver: json-file
@@ -14,6 +15,6 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
-      - /etc/localtime:/etc/localtime:r
-      - /mnt/sdb/docker/sonarr/config:/config:rw
-      - /mnt/sdb/data:/data:rw
+      - /mnt/d/docker/sonarr/config:/config
+      - /mnt/d/data:/data
+      - /etc/localtime:/etc/localtime:ro

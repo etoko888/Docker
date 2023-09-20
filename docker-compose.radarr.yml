@@ -1,8 +1,9 @@
-version: "3.2"
+version: "3.7"
+
 services:
   radarr:
     container_name: radarr
-    image: cr.hotio.dev/hotio/radarr:latest
+    image: ghcr.io/hotio/radarr
     restart: unless-stopped
     logging:
       driver: json-file
@@ -14,6 +15,6 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
+      - /mnt/d/docker/radarr/config:/config:rw
+      - /mnt/d/data:/data:rw
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/sdb/docker/radarr/config:/config:rw
-      - /mnt/sdb/data:/data:rw

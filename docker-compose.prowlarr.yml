@@ -1,8 +1,9 @@
-version: "3.2"
+version: "3.7"
+
 services:
   prowlarr:
     container_name: prowlarr
-    image: cr.hotio.dev/hotio/prowlarr:testing
+    image: ghcr.io/hotio/prowlarr
     restart: unless-stopped
     logging:
       driver: json-file
@@ -14,4 +15,5 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
-      - /mnt/sdb/docker/prowlarr/config:/config 
+      - /mnt/d/docker/prowlarr/config:/config
+      - /etc/localtime:/etc/localtime:ro

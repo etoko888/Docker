@@ -15,6 +15,6 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
-      - /mnt/d/docker/sonarr/config:/config
-      - /mnt/d/data:/data
+      - /mnt/sdb1/docker/sonarr/config:/config
+      - /mnt/sdb1/data:/data
       - /etc/localtime:/etc/localtime:ro

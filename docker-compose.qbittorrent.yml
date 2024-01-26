@@ -16,6 +16,6 @@ services:
       - TZ=Australia/Perth
       - WEBUI_PORTS=8090/tcp
     volumes:
-      - /mnt/d/docker/qbittorrent/config:/config:rw
-      - /mnt/d/data/torrents:/data/torrents:rw
+      - /mnt/sdb1/docker/qbittorrent/config:/config:rw
+      - /mnt/sdb1/data/torrents:/data/torrents:rw
       - /etc/localtime:/etc/localtime:ro

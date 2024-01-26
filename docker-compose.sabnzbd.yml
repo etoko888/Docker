@@ -16,6 +16,6 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
-      - /mnt/d/docker/sabnzbd/config:/config:rw
-      - /mnt/d/data/usenet:/data/usenet:rw
+      - /mnt/sdb1/docker/sabnzbd/config:/config:rw
+      - /mnt/sdb1/data/usenet:/data/usenet:rw
       - /etc/localtime:/etc/localtime:ro

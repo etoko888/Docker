@@ -16,6 +16,6 @@ services:
       - UMASK=002
       - TZ=Australia/Perth
     volumes:
-      - /mnt/d/docker/bazarr/config:/config:rw
-      - /mnt/d/data/media:/data/media:rw
+      - /mnt/sdb1/docker/bazarr/config:/config:rw
+      - /mnt/sdb1/data/media:/data/media:rw
       - /etc/localtime:/etc/localtime:ro

@@ -20,7 +20,7 @@ services:
       - PLEX_NO_AUTH_NETWORKS
       - PLEX_BETA_INSTALL=false
     volumes:
-      - /mnt/d/docker/plex/config:/config
-      - /mnt/d/docker/plex/transcode:/transcode
-      - /mnt/d/data/media:/data/media
+      - /mnt/sdb1/docker/plex/config:/config
+      - /mnt/sdb1/docker/plex/transcode:/transcode
+      - /mnt/sdb1/data/media:/data/media
       - /etc/localtime:/etc/localtime:ro

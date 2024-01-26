@@ -15,6 +15,6 @@ services:
       - PGID=1000
       - TZ=Australia/Perth
     volumes:
-      - /mnt/d/docker/radarr/config:/config:rw
-      - /mnt/d/data:/data:rw
+      - /mnt/sdb1/docker/radarr/config:/config:rw
+      - /mnt/sdb1/data:/data:rw
       - /etc/localtime:/etc/localtime:ro
